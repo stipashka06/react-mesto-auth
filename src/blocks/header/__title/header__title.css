@@ -1,0 +1,15 @@
+.header__title {
+  display: inline-block;
+  align-self: center;
+  background-color: black;
+  color: white;
+  height: auto;
+  padding: 0;
+  margin: 0 0 0 24px;
+  box-sizing: content-box;
+  font-family: 'Inter', 'Times New Roman', 'Arial';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.21;
+  text-decoration: none;
+}

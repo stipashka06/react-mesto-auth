@@ -1,0 +1,4 @@
+.cursor:not([disabled]):hover {
+  cursor: url(../../images/logo/cursor.svg), pointer;
+  transition: all 0.1s ease-out;
+}

@@ -1,0 +1,14 @@
+.footer__copyright {
+  font-family: 'Inter', 'Times New Roman', 'Arial';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.21;
+  color: rgb(84, 84, 84);
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .footer__copyright {
+    font-size: 14px;
+  }
+}

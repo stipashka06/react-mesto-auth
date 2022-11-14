@@ -1,0 +1,7 @@
+.profile__info {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  padding-left: 30px;
+  box-sizing: border-box;
+}

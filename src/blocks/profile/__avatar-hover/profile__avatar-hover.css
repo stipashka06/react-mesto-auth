@@ -1,0 +1,12 @@
+.profile__avatar-hover {
+  position: absolute;
+  background: url(../../../images/logo/avatar-hover.svg) center/26px 26px no-repeat;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.profile__avatar-hover:hover {
+  opacity: 1;
+}

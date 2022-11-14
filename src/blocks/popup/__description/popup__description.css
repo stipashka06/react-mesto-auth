@@ -1,0 +1,23 @@
+.popup__description{ 
+  display: inline-block;
+  padding: 0;
+  margin: 15px 0 0 ;
+  box-sizing: content-box;
+  font-family: 'Inter', 'Times New Roman', 'Arial';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  text-decoration: none;
+}
+
+.popup__description:hover {
+  opacity: 0.6;
+  }
+
+@media (max-width: 767px) {
+  .popup__description {  
+    height: 46px;
+    margin: 0;
+    font-size: 14px;
+  }
+}

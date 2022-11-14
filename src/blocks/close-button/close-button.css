@@ -1,0 +1,23 @@
+.close-button {
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  width: 48px;
+  height: 48px;
+  background: url(../../images/logo/popup-close.svg) center/32px 32px no-repeat;
+  padding: 0;
+  border: none;
+}
+
+.close-button:hover {
+  background-image: url(../../images/logo/popup-close-opacity.svg);
+}
+
+@media (max-width: 767px) {
+  .close-button  {  
+    left: calc(100% - 20px);
+    width: 20px;
+    height: 52px;
+    background-size: 20px 20px;
+  }
+}

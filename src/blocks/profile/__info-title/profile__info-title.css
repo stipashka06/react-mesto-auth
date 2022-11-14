@@ -1,0 +1,10 @@
+.profile__info-title {
+  display: flex;
+  align-items: baseline;
+}
+
+@media (max-width: 1023px) {
+  .profile__info-title {
+    padding-top: 26px;
+  }
+}

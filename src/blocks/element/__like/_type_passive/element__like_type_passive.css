@@ -1,0 +1,7 @@
+.element__like_type_passive {
+  background: url(../../../../images/logo/element-like.svg) center/contain no-repeat;
+}
+
+.element__like_type_passive:hover {
+  background-image: url(../../../../images/logo/element-like-hover.svg);
+}

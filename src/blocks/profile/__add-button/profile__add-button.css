@@ -1,0 +1,21 @@
+.profile__add-button {
+  display: flex;
+  width: 150px;
+  height: 50px;
+  padding: 0;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 2px;
+  background: url(../../../images/logo/profile-add-button.svg) center/22px 22px no-repeat;
+}
+
+.profile__add-button:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background-image: url(../../../images/logo/profile-add-button-opacity.svg);
+}
+
+@media (max-width: 1023px) {
+  .profile__add-button {
+    width: 282px;
+    background-size: 16px 16px;
+  }
+}
