@@ -12,8 +12,8 @@ export default function App(updateData) {
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState({});
-  const [isInfoTooltipYesOpen, setInfoTooltipYesOpen] = useState(false);
-  const [isInfoTooltipNoOpen, setInfoTooltipNoOpen] = useState(false);
+  const [isInfoToolTipOpen, setIsInfoToolTipOpen] = useState(false);
+  const [tooltipStatus, setTooltipStatus] = useState('');
 
   const cbAuthenticate = useCallback((data) => {
     data.token && localStorage.setItem('jwt', data.token);
@@ -37,6 +37,7 @@ export default function App(updateData) {
         setUserData(user.data);
       }
     } catch (err) {
+      console.log(err)
     } finally {
       setLoading(false);
     };
@@ -54,7 +55,8 @@ export default function App(updateData) {
       }
       return data;
     } catch (err) {
-      setInfoTooltipNoOpen(true);
+      setIsInfoToolTipOpen(true);
+      setTooltipStatus('false');
     } finally {
       setLoading(false);
     };
@@ -64,11 +66,12 @@ export default function App(updateData) {
     try {
       setLoading(true);
       const data = await api.register(login, password);
-      cbLoding(login, password);
-      setInfoTooltipYesOpen(true);
+      setIsInfoToolTipOpen(true);
+      setTooltipStatus('success');
       return data;
     } catch (err) {
-      setInfoTooltipNoOpen(true);
+      setIsInfoToolTipOpen(true);
+      setTooltipStatus('false');
     } finally {
       setLoading(false);
     };
@@ -91,26 +94,18 @@ export default function App(updateData) {
   }
 
   function closeAllPopups() {
-    setInfoTooltipYesOpen(false);
-    setInfoTooltipNoOpen(false);
+    setIsInfoToolTipOpen(false);
   };
 
   return (
     <>
       <InfoTooltip
-        isOpen={isInfoTooltipYesOpen}
-        title="Вы успешно зарегистрировались!"
-        img="union-yes"
-        onClose={closeAllPopups}
-      />
-      <InfoTooltip
-        isOpen={isInfoTooltipNoOpen}
-        title="Что-то пошло не так! Попробуйте ещё раз."
-        img="union-no"
+        isOpen={isInfoToolTipOpen}
+        status={tooltipStatus}
         onClose={closeAllPopups}
       />
       <Switch>
-        <ProtectedRoute path="/mesto" loggedIn={loggedIn} cbLogout={cbLogout} userData={userData} component={Mesto} />
+        <ProtectedRoute exact path="/" loggedIn={loggedIn} cbLogout={cbLogout} userData={userData} component={Mesto} />
         <Route path="/sign-in">
           <Login loggedIn={loggedIn} onLogin={cbLoding} updateData={updateData} />
         </Route>
@@ -118,7 +113,7 @@ export default function App(updateData) {
           <Register loggedIn={loggedIn} onRegister={cbRegister} />
         </Route>
         <Route >
-          {loggedIn ? <Redirect to="/mesto" /> : <Redirect to="/sign-up" />}
+          {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-up" />}
         </Route>
       </Switch >
     </>

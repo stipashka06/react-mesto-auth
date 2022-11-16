@@ -30,7 +30,7 @@ export default function Login({ loggedIn, onLogin }) {
 
   return (
     <>
-      <Header title={'Регистрация'} link="/mesto" />
+      <Header title={'Регистрация'} link="/sign-up" />
       <main className="content" >
         <section className="profile profile_condition-m">
           <div className="popup popup_condition-black">

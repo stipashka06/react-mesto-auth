@@ -139,7 +139,7 @@ export default function Mesto({ loggedIn, cbLogout, userData }) {
   };
 
   return (
-    <div className="page" link="/mesto">
+    <div className="page" link="/">
       <ContextUser.Provider value={currentUser}>
         <ContextCard.Provider value={currentCard}>
           <Header title={'Выйти'} loggedIn={loggedIn} cbLogout={cbLogout} userData={userData} />
